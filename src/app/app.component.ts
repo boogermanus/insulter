@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DataService } from './data-service';
+import { IInsult, Insult } from './insult';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  beginning:string = "Beginning";
-  middle:string = "Middle";
-  end:string = "End"
+
+  constructor(private _service:DataService) {
+    this.insult = new Insult();
+  }
+
+  insult:IInsult;
+
+  getInsult(): void {
+    this._service.getInsult().subscribe((myInsult:IInsult) => {
+      this.insult = myInsult;
+    })
+  }
 }

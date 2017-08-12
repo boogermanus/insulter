@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MdButtonModule} from  '@angular/material';
 import { AppComponent } from './app.component';
+import {DataService} from './data-service';
+import {HttpModule} from '@angular/http';
+
 
 @NgModule({
   declarations: [
@@ -11,9 +14,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MdButtonModule
+    MdButtonModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
