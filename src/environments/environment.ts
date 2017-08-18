@@ -4,5 +4,7 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  dataServiceNSFWAPI:'http://localhost:8091/api/insult',
+  dataServiceSFWAPI:'http://localhost:8091/api/insult/sfw'
 };

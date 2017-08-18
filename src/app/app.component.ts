@@ -32,4 +32,8 @@ export class AppComponent {
     });
     this.insultVisible = true;
   }
+
+  switchModes(): void {
+    this.sfwInsults = !this.sfwInsults;
+  }
 }
