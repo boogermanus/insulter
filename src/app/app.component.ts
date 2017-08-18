@@ -24,9 +24,10 @@ export class AppComponent {
 
   insult:IInsult;
   insultVisible:boolean = false;
+  sfwInsults:boolean = false;
 
   getInsult(): void {
-    this._service.getInsult().subscribe((myInsult:IInsult) => {
+    this._service.getInsult(this.sfwInsults).subscribe((myInsult:IInsult) => {
       this.insult = myInsult;
     });
     this.insultVisible = true;

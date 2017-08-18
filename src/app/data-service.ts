@@ -6,14 +6,19 @@ import {IInsult} from './insult';
 
 @Injectable()
 export class DataService {
-    private _dataServiceAPI = 'http://permutate.us:8091/api/insult'
+    private _dataServiceNSFWAPI = 'http://api.permutate.us:8091/api/insult';
+    private _dataServiceSFWAPI = 'http://api.permutate.us:8091/api/insult/sfw';
 
     constructor(private _http:Http) {
 
     }
 
-    getInsult() : Observable<IInsult> {
-        return this._http.get(this._dataServiceAPI)
-        .map((response:Response) => <IInsult>response.json());
+    getInsult(nsfw:boolean) : Observable<IInsult> {
+        if(nsfw)
+            return this._http.get(this._dataServiceNSFWAPI)
+                .map((response:Response) => <IInsult>response.json());
+        
+        return this._http.get(this._dataServiceSFWAPI)
+            .map((response:Response) => <IInsult>response.json());
     }
 }

@@ -4,6 +4,8 @@
   </div>
   <div class="row">
     <div class="col-md-3 col-md-offset-2">
+      <label>NSFW</label>
+      <input type="checkbox" [checked]="sfwInsults" (change)="sfwInsults = !sfwInsults"/>
       <button md-raised-button (click)="getInsult()">Insult me!</button>
     </div>
   </div>
