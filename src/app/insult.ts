@@ -5,7 +5,7 @@ export interface IInsult {
 }
 
 export class Insult implements IInsult {
-    beginning:string = "test"
-    middle:string = "test"
-    end:string = "test"
+    beginning:string = ""
+    middle:string = ""
+    end:string = ""
 }
