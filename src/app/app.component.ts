@@ -11,7 +11,7 @@ import {trigger, state, animate, transition, style} from '@angular/core';
     trigger('isInsultGenerated', [
       state('true', style({opacity: 1})),
       state('false', style({opacity: 0})),
-      transition('1 => 0', animate('100ms')),
+      transition('1 => 0', animate('500ms')),
       transition("0 => 1", animate('500ms'))
     ])
   ]
@@ -31,6 +31,11 @@ export class AppComponent {
       this.insult = myInsult;
     });
     this.insultVisible = true;
+
+    //after 5 seconds change the animation and fade out
+    setTimeout(() => {
+      this.insultVisible = false;
+    }, 5000);
   }
 
   switchModes(): void {
