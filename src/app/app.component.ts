@@ -24,7 +24,7 @@ export class AppComponent {
 
   insult:IInsult;
   insultVisible:boolean = false;
-  sfwInsults:boolean = true;
+  sfwInsults:boolean = false;
   timeoutId:any;
 
   getInsult(): void {
