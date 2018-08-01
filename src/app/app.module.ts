@@ -5,7 +5,7 @@ import {MatButtonModule} from  '@angular/material';
 import { AppComponent } from './app.component';
 import {DataService} from './data-service';
 import {HttpModule} from '@angular/http';
-
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import {HttpModule} from '@angular/http';
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

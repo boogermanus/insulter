@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  dataServiceNSFWAPI:'http://api.permutate.us:8091/api/insult',
-  dataServiceSFWAPI:'http://api.permutate.us:8091/api/insult/sfw'
+  dataServiceNSFWAPI:'https://api.permutate.us:8443/api/insult',
+  dataServiceSFWAPI:'https://api.permutate.us:8443/api/insult/sfw'
 };
