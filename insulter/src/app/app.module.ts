@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { DataService } from './data-service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatButtonModule,
     HttpClientModule,
     MatCheckboxModule,
+    MatCardModule,
+    MatTooltipModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
