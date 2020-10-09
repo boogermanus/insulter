@@ -5,9 +5,12 @@
 </div>
 <div class="row">
   <div class="col-md-3 d-flex justify-content-center">
-    <label for="">NSFW</label>
-    <input type="checkbox" class="form-control" [checked]="sfwInsults" (change)="sfwInsults = !sfwInsults" />
+    <mat-checkbox [checked]="sfwInsults" (change)="sfwInsults = !sfwInsults">NSFW</mat-checkbox>
+    <!-- <label for="">NSFW</label>
+    <input type="checkbox" class="form-control" [checked]="sfwInsults" (change)="sfwInsults = !sfwInsults" /> -->
   </div>
+</div>
+<div class="row">
   <div class="col-md-3 d-flex justify-content-center">
     <button mat-raised-button (click)="getInsult()">Insult me!</button>
   </div>

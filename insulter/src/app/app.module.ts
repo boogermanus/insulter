@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { AppComponent } from './app.component';
 import { DataService } from './data-service';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCheckboxModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
