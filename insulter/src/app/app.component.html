@@ -1,12 +1,14 @@
-<div class="container-flex">
-  <div class="row">
-    <div class="col-md-8"><h1 [@isInsultGenerated]="insultVisible">{{insult.beginning}} {{insult.middle}} {{insult.end}}</h1></div>
+<div class="row">
+  <div class="col-md-8">
+    <h1 [@isInsultGenerated]="insultVisible">{{insult.beginning}} {{insult.middle}} {{insult.end}}</h1>
   </div>
-  <div class="row">
-    <div class="col-md-3 col-md-offset-2">
-      <label>NSFW</label>
-      <input type="checkbox" [checked]="sfwInsults" (change)="sfwInsults = !sfwInsults"/>
-      <button md-raised-button (click)="getInsult()">Insult me!</button>
-    </div>
+</div>
+<div class="row">
+  <div class="col-md-3 d-flex justify-content-center">
+    <label for="">NSFW</label>
+    <input type="checkbox" class="form-control" [checked]="sfwInsults" (change)="sfwInsults = !sfwInsults" />
+  </div>
+  <div class="col-md-3 d-flex justify-content-center">
+    <button mat-raised-button (click)="getInsult()">Insult me!</button>
   </div>
 </div>
