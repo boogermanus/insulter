@@ -18,6 +18,9 @@ import {trigger, state, animate, transition, style} from '@angular/animations';
 })
 export class AppComponent {
 
+  get fullInsult(): string {
+    return `${this.insult.beginning} ${this.insult.middle} ${this.insult.end}`;
+  }
   constructor(private _service: DataService) {
     this.insult = new Insult();
   }
