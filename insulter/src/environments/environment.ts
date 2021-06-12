@@ -5,6 +5,4 @@
 
 export const environment = {
   production: false,
-  dataServiceNSFWAPI:'http://localhost:8091/api/insult',
-  dataServiceSFWAPI:'http://localhost:8091/api/insult/sfw'
 };
