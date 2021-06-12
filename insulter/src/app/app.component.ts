@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { DataService } from './data-service';
-import { IInsult, Insult } from './insult';
+import { IInsult } from './insult';
 import {trigger, state, animate, transition, style} from '@angular/animations';
+import {InsultService} from './insult-service';
 
 @Component({
   selector: 'app-root',
@@ -21,8 +22,12 @@ export class AppComponent {
   get fullInsult(): string {
     return `${this.insult.beginning} ${this.insult.middle} ${this.insult.end}`;
   }
-  constructor(private _service: DataService) {
-    this.insult = new Insult();
+  constructor(private _service: InsultService) {
+    this.insult = {
+      beginning: ' ',
+      middle: ' ',
+      end: ' '
+    };
   }
 
   insult: IInsult;
@@ -35,9 +40,7 @@ export class AppComponent {
     clearTimeout(this.timeoutId);
 
     // call the service and get a new insult
-    this._service.getInsult(this.sfwInsults).subscribe((myInsult: IInsult) => {
-      this.insult = myInsult;
-    });
+    this.insult = this._service.getInsult(this.sfwInsults);
     this.insultVisible = true;
 
     // after 5 seconds change the animation and fade out

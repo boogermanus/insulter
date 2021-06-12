@@ -3,9 +3,3 @@ export interface IInsult {
     middle: string;
     end: string;
 }
-
-export class Insult implements IInsult {
-    beginning = ' ';
-    middle = ' ';
-    end = ' ';
-}
