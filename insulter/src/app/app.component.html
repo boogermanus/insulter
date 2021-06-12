@@ -22,7 +22,7 @@
         </mat-card-header>
         <mat-card-actions>
           <button mat-raised-button (click)="getInsult()">Insult me!</button>
-          <mat-checkbox matTooltip="Not Safe for Work Insults" matTooltipPosition="right" class="ml-2" [checked]="sfwInsults" (change)="switchModes()">NSFW</mat-checkbox>
+          <mat-checkbox matTooltip="Not Safe for Work Insults" matTooltipPosition="right" class="ml-2" [checked]="nsfwInsults" (change)="switchModes()">Safe For Work (maybe)</mat-checkbox>
         </mat-card-actions>
       </mat-card>
     </div>

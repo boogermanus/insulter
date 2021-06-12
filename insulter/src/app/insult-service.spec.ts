@@ -70,20 +70,5 @@ describe('InsultServiceService', () => {
       expect(service.middle.find(b => b.insult === insult.middle).sfw).toEqual(true, 'middle not found');
       expect(service.end.find(b => b.insult === insult.end).sfw).toEqual(true, 'end not found');
     });
-
-    it('should not generate the same insult five times in a row', () => {
-      let insult: IInsult;
-      const list: IInsult[] = [];
-      insult = service.getInsult(false);
-
-      list.push(insult);
-      for (let i = 0; i < 4; i++) {
-        insult = service.getInsult(false);
-        const found = list
-            .find(lfi => lfi.beginning === insult.beginning && lfi.middle === insult.middle && lfi.end === insult.end);
-        expect(found).toBeUndefined();
-        list.push(insult);
-      }
-    });
   });
 });

@@ -31,7 +31,7 @@ export class AppComponent {
 
   insult: IInsult;
   insultVisible = false;
-  sfwInsults = true;
+  nsfwInsults = false;
   timeoutId: any;
 
   getInsult(): void {
@@ -39,7 +39,7 @@ export class AppComponent {
     clearTimeout(this.timeoutId);
 
     // call the service and get a new insult
-    this.insult = this._service.getInsult(this.sfwInsults);
+    this.insult = this._service.getInsult(this.nsfwInsults);
     this.insultVisible = true;
 
     // after 5 seconds change the animation and fade out
@@ -49,6 +49,6 @@ export class AppComponent {
   }
 
   switchModes(): void {
-    this.sfwInsults = !this.sfwInsults;
+    this.nsfwInsults = !this.nsfwInsults;
   }
 }
