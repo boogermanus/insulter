@@ -49,5 +49,26 @@ describe('InsultServiceService', () => {
     it('should have method defined', () =>{
       expect(service.getInsult).toBeDefined();
     });
+    
+    it('should return an insult', () => {
+      let insult = service.getInsult(false);
+      expect(insult).not.toBeNull();
+    });
+    
+    it('should return a non-empty insult', () => {
+      let insult = service.getInsult(false);
+      
+      expect(insult.beginning).not.toEqual(' ');
+      expect(insult.middle).not.toEqual(' ');
+      expect(insult.end).not.toEqual(' ');
+    });
+    
+    it('should generate sfw insult', () =>{
+      let insult = service.getInsult(true);
+      
+      expect(service.beginning.find(b => b.insult === insult.beginning).sfw).toEqual(true, "beginning not found");
+      expect(service.middle.find(b => b.insult === insult.middle).sfw).toEqual(true, "middle not found");
+      expect(service.end.find(b => b.insult === insult.end).sfw).toEqual(true, "end not found");
+    })
   });
 });
