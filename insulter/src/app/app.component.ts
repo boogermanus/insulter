@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DataService } from './data-service';
 import { IInsult } from './insult';
 import {trigger, state, animate, transition, style} from '@angular/animations';
 import {InsultService} from './insult-service';
@@ -32,7 +31,7 @@ export class AppComponent {
 
   insult: IInsult;
   insultVisible = false;
-  sfwInsults = false;
+  sfwInsults = true;
   timeoutId: any;
 
   getInsult(): void {
