@@ -109,7 +109,6 @@
       }
     }
   },
-  "defaultProject": "insulter",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
