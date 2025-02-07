@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {IWord} from './iword';
-import beginning from '../assets/beginning.json';
-import middle from '../assets/middle.json';
-import end from '../assets/end.json';
-import {IInsult} from './insult';
+import { IWord } from '../interfaces/iword';
+import beginning from '../../../public/beginning.json';
+import middle from '../../../public/middle.json';
+import end from '../../../public/end.json';
+import { IInsult } from '../interfaces/iinsult';
 
 @Injectable({
   providedIn: 'root'

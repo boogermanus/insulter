@@ -1,22 +1,34 @@
+import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component } from '@angular/core';
-import { IInsult } from './insult';
-import {trigger, state, animate, transition, style} from '@angular/animations';
-import {InsultService} from './insult-service';
+import { MatCardModule } from '@angular/material/card'
+import { MatCheckboxModule } from '@angular/material/checkbox'
+import { IInsult } from './interfaces/iinsult';
+import { InsultService } from './services/insult.service';
+import { MatButtonModule} from '@angular/material/button';
+import { MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [
+    MatCardModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    MatTooltipModule
+  ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrl: './app.component.scss',
   animations: [
     trigger('isInsultGenerated', [
       state('true', style({opacity: 1})),
       state('false', style({opacity: 0})),
-      transition('0 => 1', animate('500ms')),
-      transition('1 => 0', animate('500ms'))
+      transition('0 => 1', animate('250ms')),
+      transition('1 => 0', animate('250ms'))
     ])
   ]
 })
 export class AppComponent {
+  title = 'insulter';
 
   get fullInsult(): string {
     return `${this.insult.beginning} ${this.insult.middle} ${this.insult.end}`;

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
-import { InsultService } from './insult-service';
-import {IInsult} from './insult';
+import { InsultService } from './insult.service';
+
 
 describe('InsultServiceService', () => {
   let service: InsultService;
@@ -66,9 +66,9 @@ describe('InsultServiceService', () => {
     it('should generate sfw insult', () => {
       const insult = service.getInsult(true);
 
-      expect(service.beginning.find(b => b.insult === insult.beginning).sfw).toEqual(true, 'beginning not found');
-      expect(service.middle.find(b => b.insult === insult.middle).sfw).toEqual(true, 'middle not found');
-      expect(service.end.find(b => b.insult === insult.end).sfw).toEqual(true, 'end not found');
+      expect(service.beginning.find(b => b.insult === insult.beginning)?.sfw).toEqual(true, 'beginning not found');
+      expect(service.middle.find(b => b.insult === insult.middle)?.sfw).toEqual(true, 'middle not found');
+      expect(service.end.find(b => b.insult === insult.end)?.sfw).toEqual(true, 'end not found');
     });
   });
 });
