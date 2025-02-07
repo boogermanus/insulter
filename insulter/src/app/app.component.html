@@ -1,1 +1,14 @@
-<p>app works!</p>
+<div class="container">
+    <div class="d-flex justify-content-center">
+      <mat-card class="m-2">
+        <mat-card-header class="m-2">
+          <h3 align="center" class="m-2" [@isInsultGenerated]="insultVisible">{{fullInsult}}</h3>
+        </mat-card-header>
+        <mat-card-actions>
+          <button mat-raised-button (click)="getInsult()">Insult me!</button>
+          <mat-checkbox matTooltip="Not Safe for Work Insults" matTooltipPosition="right" class="ml-2"
+            [checked]="nsfwInsults" (change)="switchModes()">Safe For Work (maybe)</mat-checkbox>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
