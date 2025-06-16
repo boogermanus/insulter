@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-	"build:ci" "ng build --configuration production --base-href /apps/insulter/"
+	"build:ci" "ng build --configuration production --base-href /apps/insulter/",
     "test:ci": "ng test --watch=false --progress=false --browsers Chromeheadless"
   },
   "private": true,
