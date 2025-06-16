@@ -1,8 +1,8 @@
 <div class="container">
-    <div class="d-flex justify-content-center">
+    <div class="d-flex flex-row justify-content-center">
       <mat-card class="m-2">
         <mat-card-header class="m-2">
-          <h3 align="center" class="m-2" [@isInsultGenerated]="insultVisible">{{fullInsult}}</h3>
+          <h3 class="m-2" [@isInsultGenerated]="insultVisible">{{fullInsult}}</h3>
         </mat-card-header>
         <mat-card-actions>
           <button mat-raised-button (click)="getInsult()">Insult me!</button>
