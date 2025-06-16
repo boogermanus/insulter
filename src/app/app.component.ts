@@ -6,6 +6,7 @@ import { IInsult } from './interfaces/iinsult';
 import { InsultService } from './services/insult.service';
 import { MatButtonModule} from '@angular/material/button';
 import { MatTooltipModule} from '@angular/material/tooltip';
+import {provideHttpClient} from '@angular/common/http';
 
 @Component({
     selector: 'app-root',
@@ -13,7 +14,7 @@ import { MatTooltipModule} from '@angular/material/tooltip';
         MatCardModule,
         MatCheckboxModule,
         MatButtonModule,
-        MatTooltipModule
+        MatTooltipModule,
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
@@ -31,6 +32,7 @@ export class AppComponent {
   public insult: IInsult;
   public insultVisible = false;
   public nsfwInsults = false;
+  public insultGenerated = false;
   public timeoutId: any;
 
 
@@ -45,6 +47,7 @@ export class AppComponent {
     };
   }
   public getInsult(): void {
+    this.insultGenerated = true;
     // clear any existing timeout to keep the animation in check
     clearTimeout(this.timeoutId);
 

@@ -1,7 +1,8 @@
 <div class="container">
     <div class="row justify-content-center m-2">
-      <mat-card class="m-2">
+      <mat-card class="m-2 card">
         <mat-card-header class="m-2">
+          <h3 class="m-2" [hidden]="insultGenerated">Insult Me!</h3>
           <h3 class="m-2" [@isInsultGenerated]="insultVisible">{{fullInsult}}</h3>
         </mat-card-header>
         <mat-card-actions class="justify-content-around">
