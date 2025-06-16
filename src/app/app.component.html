@@ -4,7 +4,7 @@
         <mat-card-header class="m-2">
           <h3 class="m-2" [@isInsultGenerated]="insultVisible">{{fullInsult}}</h3>
         </mat-card-header>
-        <mat-card-actions>
+        <mat-card-actions class="justify-content-around">
           <button mat-raised-button (click)="getInsult()">Insult me!</button>
           <mat-checkbox matTooltip="Not Safe for Work Insults" matTooltipPosition="right" class="ml-2"
             [checked]="nsfwInsults" (change)="switchModes()">Safe For Work (maybe)</mat-checkbox>
