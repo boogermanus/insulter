@@ -8,29 +8,33 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    MatCardModule,
-    MatCheckboxModule,
-    MatButtonModule,
-    MatTooltipModule
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  animations: [
-    trigger('isInsultGenerated', [
-      state('true', style({opacity: 1})),
-      state('false', style({opacity: 0})),
-      transition('0 => 1', animate('250ms')),
-      transition('1 => 0', animate('250ms'))
-    ])
-  ]
+    selector: 'app-root',
+    imports: [
+        MatCardModule,
+        MatCheckboxModule,
+        MatButtonModule,
+        MatTooltipModule
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    animations: [
+        trigger('isInsultGenerated', [
+            state('true', style({ opacity: 1 })),
+            state('false', style({ opacity: 0 })),
+            transition('0 => 1', animate('250ms')),
+            transition('1 => 0', animate('250ms'))
+        ])
+    ]
 })
 export class AppComponent {
-  title = 'insulter';
+  public title = 'insulter';
+  public insult: IInsult;
+  public insultVisible = false;
+  public nsfwInsults = false;
+  public timeoutId: any;
 
-  get fullInsult(): string {
+
+  public get fullInsult(): string {
     return `${this.insult.beginning} ${this.insult.middle} ${this.insult.end}`;
   }
   constructor(private _service: InsultService) {
@@ -40,13 +44,7 @@ export class AppComponent {
       end: ' '
     };
   }
-
-  insult: IInsult;
-  insultVisible = false;
-  nsfwInsults = false;
-  timeoutId: any;
-
-  getInsult(): void {
+  public getInsult(): void {
     // clear any existing timeout to keep the animation in check
     clearTimeout(this.timeoutId);
 
@@ -54,13 +52,14 @@ export class AppComponent {
     this.insult = this._service.getInsult(this.nsfwInsults);
     this.insultVisible = true;
 
-    // after 5 seconds change the animation and fade out
+    // after 3 seconds change the animation and fade out
     this.timeoutId = setTimeout(() => {
       this.insultVisible = false;
-    }, 5000);
+    }, 3000);
   }
 
-  switchModes(): void {
+  public switchModes(): void {
     this.nsfwInsults = !this.nsfwInsults;
+    this.insultVisible = false;
   }
 }
