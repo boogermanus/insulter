@@ -8,24 +8,23 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    MatCardModule,
-    MatCheckboxModule,
-    MatButtonModule,
-    MatTooltipModule
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  animations: [
-    trigger('isInsultGenerated', [
-      state('true', style({opacity: 1})),
-      state('false', style({opacity: 0})),
-      transition('0 => 1', animate('250ms')),
-      transition('1 => 0', animate('250ms'))
-    ])
-  ]
+    selector: 'app-root',
+    imports: [
+        MatCardModule,
+        MatCheckboxModule,
+        MatButtonModule,
+        MatTooltipModule
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    animations: [
+        trigger('isInsultGenerated', [
+            state('true', style({ opacity: 1 })),
+            state('false', style({ opacity: 0 })),
+            transition('0 => 1', animate('250ms')),
+            transition('1 => 0', animate('250ms'))
+        ])
+    ]
 })
 export class AppComponent {
   title = 'insulter';
