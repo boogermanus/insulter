@@ -13,6 +13,7 @@ export class InsultService {
   public beginning: IWord[] = [];
   public middle: IWord[] = [];
   public end: IWord[] = [];
+  // this should be used...
   public lastFiveInsults: IInsult[] = [];
 
   constructor() {
