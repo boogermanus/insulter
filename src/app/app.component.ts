@@ -31,10 +31,11 @@ export class AppComponent {
   public title = 'insulter';
   public insult: IInsult;
   public insultVisible = false;
-  public nsfwInsults = false;
+  public nsfwInsults = true;
   public insultGenerated = false;
   public timeoutId: any;
   public insultList: IInsult[] = [];
+  public showPrevious: boolean = false;
 
   public get fullInsult(): string {
     return this.getFullInsult(this.insult);
@@ -56,11 +57,12 @@ export class AppComponent {
     // call the service and get a new insult
     this.insult = this._service.getInsult(this.nsfwInsults);
     this.insultVisible = true;
-    this.addInsult(this.insult);
+
 
     // after 3 seconds change the animation and fade out
     this.timeoutId = setTimeout(() => {
       this.insultVisible = false;
+      this.addInsult(this.insult);
     }, 3000);
   }
 
@@ -70,14 +72,18 @@ export class AppComponent {
   }
 
   private addInsult(insult: IInsult): void {
-    this.insultList.push(insult);
+    this.insultList.unshift(insult);
 
-    if (this.insultList.length > 3) {
-      this.insultList.shift();
+    if (this.insultList.length > 5) {
+      this.insultList.pop();
     }
   }
 
-  private getFullInsult(insult: IInsult): string {
+  public getFullInsult(insult: IInsult): string {
     return `${insult.beginning} ${insult.middle} ${insult.end}`;
+  }
+
+  public ShowPrevious(): void {
+    this.showPrevious = !this.showPrevious;
   }
 }
