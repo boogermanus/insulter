@@ -1,15 +1,19 @@
 <div class="container">
-    <div class="row justify-content-center m-2">
-      <mat-card class="m-2 card">
-        <mat-card-content class="m-2" style="height: 70px">
-          <h3 class="m-2" [hidden]="insultGenerated">Insult Me!</h3>
-          <h3 class="m-2" [@isInsultGenerated]="insultVisible">{{fullInsult}}</h3>
-        </mat-card-content>
-        <mat-card-actions class="justify-content-around">
-          <button mat-raised-button (click)="getInsult()">Insult me!</button>
-          <mat-checkbox matTooltip="Not Safe for Work Insults" matTooltipPosition="right" class="ml-2"
-            [checked]="nsfwInsults" (change)="switchModes()">Safe For Work (maybe)</mat-checkbox>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+  <div class="row justify-content-center m-2">
+    <mat-card class="m-2 card">
+      <mat-card-content class="m-2" style="height: 70px">
+        <h3 class="m-2" [hidden]="insultGenerated">Insult Me!</h3>
+        <h3 class="m-2" [@isInsultGenerated]="insultVisible">{{ fullInsult }}</h3>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button (click)="getInsult()" class="ml-2">Insult me!</button>
+        <mat-checkbox matTooltip="Not Safe for Work Insults" matTooltipPosition="right" class="ml-2"
+                      [checked]="nsfwInsults" (change)="switchModes()">Safe For Work (maybe)
+        </mat-checkbox>
+        <mat-checkbox matTooltip="Show Previous Insults" matTooltipPosition="right" class="ml-2"
+                      >Show Previous Insults
+        </mat-checkbox>
+      </mat-card-actions>
+    </mat-card>
   </div>
+</div>
